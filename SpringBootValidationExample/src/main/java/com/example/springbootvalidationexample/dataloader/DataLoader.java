@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -24,6 +26,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         user.setLastName("Birdogan");
         user.setEmail("ugurbirdogan34@gmail.com");
         user.setMobilePhone("555-555-5555");
+        user.setBirthday(LocalDate.parse("1994-04-03"));
         user.setCommPreference("email");
         userRepository.save(user);
 
